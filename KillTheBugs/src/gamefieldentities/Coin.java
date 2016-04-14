@@ -4,25 +4,19 @@
  * and open the template in the editor.
  */
 package gamefieldentities;
-import GFI.BulletView;
+import GFI.CoinView;
 
 /**
  *
  * @author Cüneyt EREM
  */
 
-public class Bullet {
-	private final int SPEED;
-	private final int DAMAGE;
-	static BulletView view;
-
-	public Bullet() {
-		SPEED = 5;
-		DAMAGE = 10;
-		view = new BulletView();
-	}
+public class Coin {
+	private int value;
+	static CoinView view;
 	
-	public int getSpeed() {
-		return SPEED;
+	public Coin(int value) {
+		this.value = value;
+		view = new CoinView();
 	}
 }
