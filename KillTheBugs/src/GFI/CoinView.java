@@ -6,7 +6,7 @@
 package GFI;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
+ 
 /**
  *
  * @author Cüneyt EREM
