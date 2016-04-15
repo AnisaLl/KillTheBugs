@@ -4,7 +4,7 @@ import GFI.WeaponView;
 public class Weapon{
 	private int price;
 	private int frequency;
-	private Strign name;
+	private String name;
 	private boolean status;
 	static WeaponView view;
 	
