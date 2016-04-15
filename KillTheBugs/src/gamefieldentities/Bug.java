@@ -7,7 +7,7 @@ public class Bug{
 	private int speed;
 	private int scoreValue;
 	private String name;
-	Static BugView view;
+	static BugView view;
 	
 	public Bug(String name, int health, int speed, int scoreValue)
 	{
