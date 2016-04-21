@@ -15,7 +15,9 @@ public class User {
     private String name;
     private Account score;
     private Duration duration;
-    
+    /* I think Duration should be recorded as double because 
+       we cannot manupulate the duration otherwise. This is a 
+       problem while file reading and writing.*/
     public User(String name, Account score, Duration duration)
     {
            this.name = name;
@@ -63,6 +65,15 @@ public class User {
      */
     public void setDuration(Duration duration) {
         this.duration = duration;
+    }
+    
+    /**
+     * @return the user to write into file 
+     */
+    @Override
+    public String toString(){
+       String result = this.getName()+"/"+this.getScore()+"/"+this.getDuration();
+       return result;
     }
     
 }

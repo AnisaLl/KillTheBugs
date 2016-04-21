@@ -39,4 +39,9 @@ public class Account extends Observable {
     public void setValue(int value) {
         this.value = value;
     }
+    
+    @Override
+    public String toString(){
+        return ""+value;
+    }
 }
