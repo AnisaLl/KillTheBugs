@@ -2,6 +2,7 @@
 package mainentities;
 
 import java.time.Duration;
+import GE.Account;
 
 /**
  * User	- This class holds basic information about a user of the game
@@ -39,7 +40,7 @@ public class User {
     /**
      * @return the score
      */
-    public String getScore() {
+    public Account getScore() {
         return score;
     }
     

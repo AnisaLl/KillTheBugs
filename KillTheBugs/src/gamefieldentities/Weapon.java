@@ -12,12 +12,12 @@ public class Weapon{
 	{
 		price = 0;
 		frequency = 0;
-		name ='';
+		name ="";
 		status = true;
 		view = new WeaponView();
 	
 	}
-	public Weapon(int price, int frequency, Strign name, boolean status)
+	public Weapon(int price, int frequency, String name, boolean status)
 	{
 		this.price = price;
 		this.frequency = frequency;
