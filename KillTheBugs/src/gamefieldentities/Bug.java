@@ -1,21 +1,18 @@
 package gamefieldentities;
-import GFI.BugView;
 
-public class Bug{
+public class Bug extends GMActor{
 	
 	private int health;
 	private int speed;
 	private int scoreValue;
 	private String name;
-	static BugView view;
 	
-	public Bug(String name, int health, int speed, int scoreValue)
+	public Bug(int x, int y ,String name, int health, int speed, int scoreValue)
 	{
+                super(x,y);
 		this.name = name;
 		this.health = health;
 		this.speed = speed;
-		this.scoreValue = scoreValue;
-		view = new BugView();
 	}
 	
 	public String getName()

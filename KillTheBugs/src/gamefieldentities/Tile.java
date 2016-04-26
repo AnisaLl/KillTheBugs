@@ -6,12 +6,13 @@ package gamefieldentities;
  * @author Anisa Llaveshi
  * @version 1.00 2016/4/14
  */
-public class Tile {
+public class Tile extends GMActor{
     
     private boolean status;
     
-    public Tile(boolean status)
+    public Tile(int x, int y, boolean status)
     {
+        super(x, y);
         this.status = status;
     }
 
