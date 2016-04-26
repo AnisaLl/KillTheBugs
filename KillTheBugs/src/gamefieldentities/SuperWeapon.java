@@ -16,10 +16,13 @@ import java.util.Observer;
  */
 public class SuperWeapon extends Observable{
     
+    private int x,y;
     private int price;
     private boolean status;
     
-    public SuperWeapon(int price, boolean status){
+    public SuperWeapon(int x, int y, int price, boolean status){
+        this.x = x;
+        this.y = y;
         this.price = price;
         this.status = status;
     }

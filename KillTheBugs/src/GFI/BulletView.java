@@ -14,8 +14,9 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author Cüneyt EREM
+ * @author USER
  */
+
 
 public class BulletView{
 	 private static final String Filename = null;
@@ -39,8 +40,5 @@ public class BulletView{
 	        System.err.println(e.getMessage());
 	    }
 		
-	}
-	public void act() {
-		//later on		
 	}
 }

@@ -1,24 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package GFI;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
- 
+
 /**
  *
- * @author Cüneyt EREM
+ * @author USER
  */
 
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
 public class CoinView {
-	static ImageIcon icon;      //this will change later
-	 JLabel label;
+	private BufferedImage coin;
 	
-public CoinView() {
-		icon = new ImageIcon("",
-            "coin");
-		label = new JLabel(icon);
+	public CoinView() {
+		try {
+			this.coin = ImageIO.read(new File("pictures\\coin.png"));
+		} catch (Exception e) {
+			System.out.println(this.toString() + " exception : "+ e);
+		}
 	}
+
+	public BufferedImage getCoin() {
+		return coin;
+	}
+
+	public void setCoin(BufferedImage coin) {
+		this.coin = coin;
+	}
+
+	
+	
+
 }
