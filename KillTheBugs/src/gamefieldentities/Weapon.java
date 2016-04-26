@@ -1,12 +1,11 @@
 package gamefieldentities;
-import GFI.WeaponView;
+//import GFI.WeaponView;
 
 public class Weapon extends GMActor{
 	private int price;
 	private int frequency;
 	private String name;
 	private boolean status;
-	static WeaponView view;
 	
 	public Weapon(int x, int y)
 	{
@@ -15,7 +14,6 @@ public class Weapon extends GMActor{
             frequency = 0;
             name ="";
             status = true;
-            view = new WeaponView();
 	}
 	public Weapon(int x, int y, int price, int frequency, String name, boolean status)
 	{
@@ -24,7 +22,6 @@ public class Weapon extends GMActor{
 		this.frequency = frequency;
 		this.name = name;
 		this.status = status;
-		view = new WeaponView();
 	}
 	
 	public int getPrice()
