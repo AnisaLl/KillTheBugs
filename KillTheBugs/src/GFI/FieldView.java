@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package GFI;
+import gamefieldentities.Bug;
 import java.util.ArrayList;
 
 /**
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 public class FieldView {
 
 	private ArrayList<Integer> bugViewBag = new ArrayList<>();
+	private ArrayList<Bug> bugs = new ArrayList<Bug>();
 	private ArrayList<BulletView> bulletViewBag = new ArrayList<>();
 	private ArrayList<BulletView> TILE_BAG = new ArrayList<>();
 	private ArrayList<BulletView> weaponViewBag = new ArrayList<>();
@@ -25,7 +27,6 @@ public class FieldView {
 	public FieldView() {
 		bugViewBag.add(0);
 		bugViewBag.add(1);
-		
-		
+		//draw(bugs.get(0).getX() , bugs.get(0).getY(),bugview.image)
         }
 }

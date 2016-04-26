@@ -4,22 +4,20 @@
  * and open the template in the editor.
  */
 package gamefieldentities;
-import GFI.BulletView;
 
 /**
  *
  * @author Cüneyt EREM
  */
 
-public class Bullet {
+public class Bullet extends GMActor{
 	private final int SPEED;
 	private final int DAMAGE;
-	static BulletView view;
 
-	public Bullet() {
-		SPEED = 5;
-		DAMAGE = 10;
-		view = new BulletView();
+	public Bullet(int x, int y) {
+            super(x, y);
+            SPEED = 5;
+            DAMAGE = 10;
 	}
 	
 	public int getSpeed() {

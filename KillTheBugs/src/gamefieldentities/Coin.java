@@ -11,12 +11,13 @@ import GFI.CoinView;
  * @author Cüneyt EREM
  */
 
-public class Coin {
+public class Coin extends GMActor {
 	private int value;
 	static CoinView view;
 	
-	public Coin(int value) {
-		this.value = value;
-		view = new CoinView();
+	public Coin(int x, int y, int value) {
+            super(x, y);
+            this.value = value;
+            view = new CoinView();
 	}
 }
