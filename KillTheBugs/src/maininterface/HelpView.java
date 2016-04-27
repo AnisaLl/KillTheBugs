@@ -1,4 +1,4 @@
-package mainInterface;
+package maininterface;
 
 import java.awt.*;
 
@@ -10,20 +10,20 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
-public class helpView extends JPanel{
+public class HelpView extends JPanel{
 
 	//private JFrame frame;
 	private JPanel panel;
 	private final Dimension space = new Dimension(0,30);
 	private JLabel logo;
-	private Button mybutton;
+	private Button backButton;
 	private final String header = "HighScores";
 	/**
 	 * Launch the application.
 	 */
 	
 
-	public helpView() {
+	public HelpView() {
 		initialize();
 	}
 
@@ -78,16 +78,16 @@ public class helpView extends JPanel{
         add(Box.createRigidArea(space));
 
         
-		add(mybutton = new Button("Back"));
-        mybutton.addActionListener(new ActionListener() {
+		add(backButton = new Button("Back"));
+        getBackButton().addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		mybutton.addMouseListener(new MouseAdapter()
+        		getBackButton().addMouseListener(new MouseAdapter()
         		{
         			public void mouseClicked(MouseEvent m)
         			{
 						removeAll();
         				updateUI();
-        				mainMenuView m1= new mainMenuView();
+        				MainMenuView m1= new MainMenuView();
         				add(m1);
         			}
         		});
@@ -97,4 +97,18 @@ public class helpView extends JPanel{
        updateUI();
 		
 	}
+
+    /**
+     * @return the backButton
+     */
+    public Button getBackButton() {
+        return backButton;
+    }
+
+    /**
+     * @param backButton the backButton to set
+     */
+    public void setBackButton(Button backButton) {
+        this.backButton = backButton;
+    }
 }

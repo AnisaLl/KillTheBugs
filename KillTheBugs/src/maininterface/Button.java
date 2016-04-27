@@ -1,4 +1,4 @@
-package mainInterface;
+package maininterface;
 
 import java.awt.Color;
 import java.awt.Component;

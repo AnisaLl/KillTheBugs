@@ -1,4 +1,4 @@
-package mainInterface;
+package maininterface;
 
 import java.awt.*;
 
@@ -10,12 +10,12 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
-public class settingsView extends JPanel{
+public class SettingsView extends JPanel{
 
 	//private JFrame frame;
 	private JPanel panel;
 	private final Dimension space = new Dimension(0,30);
-	private Button mybutton;
+	private Button backButton;
 	private final String header = "HighScores";
 	private final JLabel lblNewLabel = new JLabel("Game Volume");
 	/**
@@ -23,7 +23,7 @@ public class settingsView extends JPanel{
 	 */
 	
 
-	public settingsView() {
+	public SettingsView() {
 		initialize();
 	}
 
@@ -84,16 +84,16 @@ public class settingsView extends JPanel{
 
         add(Box.createRigidArea(space));
 
-		add(mybutton = new Button("Back"));
-		 mybutton.addActionListener(new ActionListener() {
+		add(backButton = new Button("Back"));
+		 getBackButton().addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
-	        		mybutton.addMouseListener(new MouseAdapter()
+	        		getBackButton().addMouseListener(new MouseAdapter()
 	        		{
 	        			public void mouseClicked(MouseEvent m)
 	        			{
 							removeAll();
 	        				updateUI();
-	        				mainMenuView m1= new mainMenuView();
+	        				MainMenuView m1= new MainMenuView();
 	        				add(m1);
 	        			}
 	        		});
@@ -103,4 +103,22 @@ public class settingsView extends JPanel{
        updateUI();
 		
 	}
+
+    public Object getButtons() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * @return the backButton
+     */
+    public Button getBackButton() {
+        return backButton;
+    }
+
+    /**
+     * @param backButton the backButton to set
+     */
+    public void setBackButton(Button backButton) {
+        this.backButton = backButton;
+    }
 }
