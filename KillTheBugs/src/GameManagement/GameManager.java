@@ -1,4 +1,3 @@
-
 package GameManagement;
 
 import GE.Account;
@@ -304,15 +303,19 @@ public class GameManager implements ActionListener{
         JButton source = (JButton) e.getSource();
         
         //Adding listeners to mainMenuView
-        for (int i = 0; i < mainMenuView.getButtons().get(i); i++)
+        for (int i = 0; i < mainMenuView.getButtons().size(); i++)
         {
             mainMenuView.getButtons.get(i).addActionListener(this);
         }
         
-        
         if (source == mainMenuView.getNewGameButton())
         {
             cl.show(cardPanel, "2");
+        }
+        
+        for (int i = 0; i < gameView.getButtons().size(); i++)
+        {
+            gameView.getButtons().get(i).addActionListener(this);
         }
         
         if (source == mainMenuView.getHighScoresButton())
@@ -327,10 +330,6 @@ public class GameManager implements ActionListener{
         for (int i = 0; i < settingsView.getButtons.get(i); i++)
         {
             mainMenuView.getButtons.get(i).addActionListener(this);
-        }
-        if (source == settingsView.getGMSlider())
-        {
-            
         }
         
         if (source == mainMenuView.getHelpButton())
@@ -349,7 +348,7 @@ public class GameManager implements ActionListener{
     {
         public void run()
         {
-            gameView.getFieldView().addCoin(new CoinView());
+            gameView.getFieldView().addObject(new CoinView());
         }
     }
     
@@ -357,8 +356,7 @@ public class GameManager implements ActionListener{
     {
         public void run()
         {
-            gameView.getFieldView().addBitsNPieces(new BitsNPiecesView());
+            gameView.getFieldView().addObject(new BitsNPiecesView());
         }
     }
-    
 }
