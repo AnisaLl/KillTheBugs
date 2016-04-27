@@ -1,11 +1,14 @@
 package gamefieldentities;
 
+import GFI.BugView;
+
 public class Bug extends GMActor{
 	
 	private int health;
 	private int speed;
 	private int scoreValue;
 	private String name;
+        private BugView bugView;
 	
 	public Bug(int x, int y ,String name, int health, int speed, int scoreValue)
 	{
@@ -54,5 +57,19 @@ public class Bug extends GMActor{
 	{
 		this.scoreValue = scoreValue;
 	}
+
+    /**
+     * @return the bugView
+     */
+    public BugView getBugView() {
+        return bugView;
+    }
+
+    /**
+     * @param bugView the bugView to set
+     */
+    public void setBugView(BugView bugView) {
+        this.bugView = bugView;
+    }
 	
 }

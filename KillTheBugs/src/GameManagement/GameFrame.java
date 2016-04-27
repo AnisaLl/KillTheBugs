@@ -1,7 +1,8 @@
 package GameManagement;
 
-import com.sun.org.apache.xml.internal.security.utils.HelperNodeList;
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -11,16 +12,16 @@ import javax.swing.JPanel;
  */
 
 public class GameFrame  extends JFrame {
-    
-    private GameManager gameManager;
-
+    GameManager gameManager;
     public GameFrame()
     {
         super("Kill the Bugs");
-        gameManager = gameManager.getInstance();
+        //gameManager = gameManager.getInstance();
+        gameManager = new GameManager();
         gameManager.loadGame();
+        setSize(new Dimension(550, 550));
+        getContentPane().add(gameManager.getCardPanel());
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
-    
-
 }

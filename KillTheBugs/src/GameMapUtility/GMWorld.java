@@ -22,15 +22,15 @@ public class GMWorld {
         this.height = height;
     }
     
-    public boolean addObject(GMActor actor, int x, int y)
-    {
-        
-    }
+//    public boolean addObject(GMActor actor, int x, int y)
+//    {
+//        
+//    }
     
-    public boolean removeObject(GMActor actor)
-    {
-        
-    }
+//    public boolean removeObject(GMActor actor)
+//    {
+//        
+//    }
             
     
 }
