@@ -56,5 +56,4 @@ public class FieldView extends JPanel{
 	
 	
 	
-	
 }

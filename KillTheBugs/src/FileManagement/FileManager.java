@@ -11,7 +11,6 @@ import MI.HighScoresView;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -54,9 +53,12 @@ public class FileManager {
                     
                     String userName = takeUserData.next();
                     Account userScore = new Account(takeUserData.nextInt()); 
-                    Double userDuration = takeUserData.nextDouble();
+                    int userDuration = takeUserData.nextInt();
                     
                     returnData.add(new User(userName, userScore,userDuration));
+
+                    
+                    
                 }
                 
             }
@@ -135,8 +137,8 @@ public class FileManager {
     
     public FileManager getInstance(User currentPlayer){
         
-        fileManager = this;
         fileManager.addHighScore(currentPlayer);
+        fileManager = this;
         return fileManager;
     }
 }

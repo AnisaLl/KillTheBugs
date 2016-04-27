@@ -1,7 +1,6 @@
 
 package mainentities;
 
-import java.time.Duration;
 import GE.Account;
 
 /**
@@ -14,11 +13,11 @@ public class User {
     
     private String name;
     private Account score;
-    private Duration duration;
+    private int duration;
     /* I think Duration should be recorded as double because 
        we cannot manupulate the duration otherwise. This is a 
        problem while file reading and writing.*/
-    public User(String name, Account score, Duration duration)
+    public User(String name, Account score, int duration)
     {
            this.name = name;
            this.score = score;
@@ -56,14 +55,14 @@ public class User {
     /**
      * @return the duration
      */
-    public Duration getDuration() {
+    public int getDuration() {
         return duration;
     }
 
     /**
      * @param duration the duration to set
      */
-    public void setDuration(Duration duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
     
