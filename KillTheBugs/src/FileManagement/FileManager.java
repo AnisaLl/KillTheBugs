@@ -7,7 +7,7 @@ package FileManagement;
 
 import GE.Account;
 import mainentities.User;
-import MI.HighScoresView;
+import maininterface.HighScoreView;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -26,7 +26,7 @@ public class FileManager {
     private User player;
     private ArrayList<User> data;
     private FileManager fileManager;
-    private HighScoresView highScoresView;
+    private HighScoreView highScoresView;
     private final String fileName = "highScores.txt";
     
     
@@ -55,10 +55,8 @@ public class FileManager {
                     Account userScore = new Account(takeUserData.nextInt()); 
                     int userDuration = takeUserData.nextInt();
                     
-                    returnData.add(new User(userName, userScore,userDuration));
 
-                    
-                    
+                    //returnData.add(new User(userName, userScore,userDuration));
                 }
                 
             }
@@ -136,6 +134,9 @@ public class FileManager {
     }
     
     public FileManager getInstance(User currentPlayer){
+        
+        if (fileManager == null)
+            fileManager = new FileManager();
         
         fileManager.addHighScore(currentPlayer);
         fileManager = this;
