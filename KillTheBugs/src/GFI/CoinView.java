@@ -7,12 +7,14 @@ package GFI;
  */
 
 
+import GameMapUtility.GMActor;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 
-public class CoinView {
+public class CoinView extends GMActor{
 	private BufferedImage coin;
 	
 	public CoinView() {
@@ -30,8 +32,5 @@ public class CoinView {
 	public void setCoin(BufferedImage coin) {
 		this.coin = coin;
 	}
-
-	
-	
 
 }

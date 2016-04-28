@@ -96,9 +96,9 @@ public class MainMenuView extends JPanel{
         this.add(logo);
         this.add(pageInfo);
         this.add(Box.createRigidArea(space));
-        this.add(newGameButton = new Button("New game"));
+        this.add(newGameButton = new Button("New game", "src/pictures/newgamebutton.png"));
         this.add(Box.createRigidArea(space));
-        this.add(highScoreButton = new Button("HighScore"));
+        this.add(highScoreButton = new Button("HighScore", "src/pictures/newgamebutton.png"));
 //        mybutton_1.addActionListener(new ActionListener() {
 //        	public void actionPerformed(ActionEvent e) {
 //        		mybutton_1.addMouseListener(new MouseAdapter()
@@ -117,7 +117,7 @@ public class MainMenuView extends JPanel{
 //        });
         this.add(Box.createRigidArea(space));
         
-        this.add(settingsButton = new Button("Settings"));
+        this.add(settingsButton = new Button("Settings", "src/pictures/newgamebutton.png"));
 //        mybutton_2.addActionListener(new ActionListener() {
 //        	public void actionPerformed(ActionEvent e) {
 //        		mybutton_2.addMouseListener(new MouseAdapter()
@@ -138,7 +138,7 @@ public class MainMenuView extends JPanel{
 //        });
         
         this.add(Box.createRigidArea(space));
-        this.add(creditsButton = new Button("Credits"));
+        this.add(creditsButton = new Button("Credits", "src/pictures/newgamebutton.png"));
 //        mybutton_3.addActionListener(new ActionListener() {
 //        	public void actionPerformed(ActionEvent e) {
 //        		mybutton_3.addMouseListener(new MouseAdapter()
@@ -159,7 +159,7 @@ public class MainMenuView extends JPanel{
 //        });
         
         this.add(Box.createRigidArea(space));
-        this.add(helpButton = new Button("Help"));
+        this.add(helpButton = new Button("Help", "src/pictures/newgamebutton.png"));
 //        mybutton_4.addActionListener(new ActionListener() {
 //        	public void actionPerformed(ActionEvent e) {
 //        		mybutton_4.addMouseListener(new MouseAdapter()
@@ -179,7 +179,7 @@ public class MainMenuView extends JPanel{
 //        	}
 //        });
         this.add(Box.createRigidArea(space));
-        this.add(quitButton = new Button("Quit"));
+        this.add(quitButton = new Button("Quit", "src/pictures/newgamebutton.png"));
         this.updateUI();
 		
 	}

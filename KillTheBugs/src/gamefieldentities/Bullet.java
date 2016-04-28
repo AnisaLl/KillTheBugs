@@ -5,6 +5,8 @@
  */
 package gamefieldentities;
 
+import GameMapUtility.GMActor;
+
 /**
  *
  * @author Cüneyt EREM

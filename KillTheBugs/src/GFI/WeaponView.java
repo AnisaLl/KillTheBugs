@@ -10,48 +10,28 @@ package GFI;
  * @author USER
  */
 
+import GameMapUtility.GMActor;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
-public class WeaponView {
-	private BufferedImage pistol,rifle,machineGun;
+public class WeaponView extends GMActor{
+	private BufferedImage image;
 	
-	public WeaponView() {
+	public WeaponView(String path) {
 		try {
-			this.pistol = ImageIO.read(new File("pictures\\pistol.png"));
-			this.rifle = ImageIO.read(new File("pictures\\rifle.png"));
-			this.machineGun = ImageIO.read(new File("pictures\\machineGun.png"));
-		} catch (Exception e) {
-			System.out.println(this.toString() + " exception : "+ e);
+//			this.pistol = ImageIO.read(new File("pictures\\pistol.png"));
+//			this.rifle = ImageIO.read(new File("pictures\\rifle.png"));
+//			this.machineGun = ImageIO.read(new File("pictures\\machineGun.png"));
+                        this.image = ImageIO.read(new File(path));
+                        add(new JLabel(new ImageIcon(image)));
+		} catch (IOException ex) {
+			System.out.println(this.toString() + " exception : "+ ex);
 		}
 	}
-
-	public BufferedImage getPistol() {
-		return pistol;
-	}
-
-	public void setPistol(BufferedImage pistol) {
-		this.pistol = pistol;
-	}
-
-	public BufferedImage getRifle() {
-		return rifle;
-	}
-
-	public void setRifle(BufferedImage rifle) {
-		this.rifle = rifle;
-	}
-
-	public BufferedImage getMachineGun() {
-		return machineGun;
-	}
-
-	public void setMachineGun(BufferedImage machineGun) {
-		this.machineGun = machineGun;
-	}
-	
-	
 
 }

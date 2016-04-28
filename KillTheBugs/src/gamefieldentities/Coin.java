@@ -5,6 +5,7 @@
  */
 package gamefieldentities;
 import GFI.CoinView;
+import GameMapUtility.GMActor;
 
 /**
  *

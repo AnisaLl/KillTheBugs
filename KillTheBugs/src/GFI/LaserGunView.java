@@ -10,17 +10,22 @@ package GFI;
  * @author USER
  */
 
+import GameMapUtility.GMActor;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public class LaserGunView {
+public class LaserGunView extends GMActor{
 	private BufferedImage laserGun;
 	
 	public LaserGunView() {
 		try {
-			this.laserGun = ImageIO.read(new File("pictures\\worm.png"));
+			this.laserGun = ImageIO.read(new File("src/pictures/worm.png"));
+                        this.add(new JLabel(new ImageIcon(laserGun)));
 		} catch (Exception e) {
 			System.out.println(this.toString() + " exception : "+ e);
 		}

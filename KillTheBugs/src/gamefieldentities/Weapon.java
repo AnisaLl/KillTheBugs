@@ -1,6 +1,9 @@
 package gamefieldentities;
 //import GFI.WeaponView;
 
+import GameMapUtility.GMActor;
+
+
 public class Weapon extends GMActor{
 	private int price;
 	private int frequency;

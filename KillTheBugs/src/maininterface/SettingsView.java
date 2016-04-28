@@ -84,7 +84,7 @@ public class SettingsView extends JPanel{
 
         add(Box.createRigidArea(space));
 
-		add(backButton = new Button("Back"));
+		add(backButton = new Button("Back", "src/pictures/newgamebutton.png"));
 		 getBackButton().addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
 	        		getBackButton().addMouseListener(new MouseAdapter()
@@ -120,5 +120,33 @@ public class SettingsView extends JPanel{
      */
     public void setBackButton(Button backButton) {
         this.backButton = backButton;
+    }
+
+    public JRadioButton getRadioButton1() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public JRadioButton getRadioButton2() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public JRadioButton getRadioButton3() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public JSlider getBackgroundSlider() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public JLabel getBackgroundStatusLabel() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public JLabel getGameStatusLabel() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public JSlider getGameSlider() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
