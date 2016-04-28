@@ -73,7 +73,7 @@ public class HighScoreView extends JPanel{
         add(Box.createRigidArea(space));
 
         
-		add(backButton = new Button("Back"));
+		add(backButton = new Button("Back", "src/pictures/newgamebutton.png"));
         getBackButton().addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		getBackButton().addMouseListener(new MouseAdapter()

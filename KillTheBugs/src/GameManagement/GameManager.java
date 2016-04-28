@@ -2,6 +2,8 @@ package GameManagement;
 
 import GE.Account;
 import GFI.CoinView;
+import GFI.FieldView;
+import GFI.GameView;
 import gamefieldentities.Bug;
 import gamefieldentities.Bullet;
 import gamefieldentities.SuperWeapon;
@@ -36,7 +38,7 @@ public class GameManager implements ActionListener{
     private Account score;   
     
     private MainMenuView mainMenuView;
-    //private GameView gameView;
+    private GameView gameView;
     private HighScoreView highScoresView;
     private SettingsView settingsView;
     private HelpView helpView;
@@ -44,6 +46,7 @@ public class GameManager implements ActionListener{
     //private BitsNPiecesView bitsNPiecesView;
     private CoinView coinView;
     private Test test;
+   
     //private GroceryView groceryView;
     
     private CardLayout cl;
@@ -128,12 +131,13 @@ public class GameManager implements ActionListener{
     public boolean loadGame()
     {
         mainMenuView = new MainMenuView();
-        //gameView = new GameView();
+        gameView = new GameView();
         highScoresView = new HighScoreView();
         settingsView = new SettingsView();
         helpView = new HelpView();
         creditsView = new CreditsView();
         test = new Test();
+       //gameView = new GameView(bugBag, bulletBag);
         addPanels();
         addListeners();   
         return true;
@@ -145,7 +149,7 @@ public class GameManager implements ActionListener{
         setCardPanel(new JPanel(cl));
         //getCardPanel().add(test, "0");
         getCardPanel().add(mainMenuView, "1");
-        //cardPanel.add(gameView, "2");
+        cardPanel.add(gameView, "2");
         cardPanel.add(highScoresView, "3");
         cardPanel.add(settingsView, "4");
         cardPanel.add(helpView, "5");
@@ -326,10 +330,10 @@ public class GameManager implements ActionListener{
         
        
         
-//        if (source == mainMenuView.getNewGameButton())
-//        {
-//            cl.show(getCardPanel(), "2");
-//        }
+        if (source == mainMenuView.getNewGameButton())
+        {
+            cl.show(getCardPanel(), "2");
+        }
         
 //        for (int i = 0; i < gameView.getButtons().size(); i++)
 //        {

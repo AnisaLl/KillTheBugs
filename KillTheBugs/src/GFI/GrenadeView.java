@@ -10,17 +10,23 @@ package GFI;
  * @author USER
  */
 
+import GameMapUtility.GMActor;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public class GrenadeView {
+public class GrenadeView extends GMActor{
 	private BufferedImage grenade;
 	
 	public GrenadeView() {
 		try {
-			this.grenade = ImageIO.read(new File("pictures\\grenade.png"));
+			this.grenade = ImageIO.read(new File("src/pictures/grenade.png"));
+                        this.add(new JLabel(new ImageIcon(grenade)));
+                        
 		} catch (Exception e) {
 			System.out.println(this.toString() + " exception : "+ e);
 		}

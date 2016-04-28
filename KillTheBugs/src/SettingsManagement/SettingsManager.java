@@ -7,9 +7,9 @@ package SettingsManagement;
 
 import java.util.ArrayList;
 import mainentities.Settings;
-import MI.Sound;
-import MI.Theme;
-import MI.SettingsView;
+import maininterface.Sound;
+import maininterface.Theme;
+import maininterface.SettingsView;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.JSlider;
@@ -44,7 +44,7 @@ public class SettingsManager {
     private void setTheme1(){
         settingsView.getRadioButton1().addItemListener(new ItemListener(){
 
-            @override
+            @Override
             public void itemStateChanged(ItemEvent e){
                 themeID = 1;
                 if(e.getStateChange() == ItemEvent.SELECTED){
@@ -57,7 +57,7 @@ public class SettingsManager {
     private void setTheme2(){
         settingsView.getRadioButton2().addItemListener(new ItemListener(){
 
-            @override
+            @Override
             public void itemStateChanged(ItemEvent e){
                 themeID = 2;
                 if(e.getStateChange() == ItemEvent.SELECTED){
@@ -70,7 +70,7 @@ public class SettingsManager {
     private void setTheme3(){
         settingsView.getRadioButton3().addItemListener(new ItemListener(){
 
-           @override
+           @Override
            public void itemStateChanged(ItemEvent e){
                themeID = 3;
                if(e.getStateChange() == ItemEvent.SELECTED){
@@ -83,7 +83,7 @@ public class SettingsManager {
     private int setBackgroundSound(){ 
         settingsView.getBackgroundSlider().addChangeListener(new ChangeListener() {
              public void stateChanged(ChangeEvent e) {
-                musicVol = (JSlider)e.getSource()).getValue();
+                musicVol = ((JSlider)e.getSource()).getValue();
                 settingsView.getBackgroundStatusLabel().setText("Value : " + musicVol);
 
              }
@@ -96,7 +96,7 @@ public class SettingsManager {
     private int setGameSound(){ 
         settingsView.getGameSlider().addChangeListener(new ChangeListener() {
              public void stateChanged(ChangeEvent e) {
-                gameVol = (JSlider)e.getSource()).getValue();
+                gameVol = ((JSlider)e.getSource()).getValue();
                 settingsView.getGameStatusLabel().setText("Value : " +gameVol);
              }
         });

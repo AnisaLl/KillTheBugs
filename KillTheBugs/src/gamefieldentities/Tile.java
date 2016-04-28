@@ -1,5 +1,7 @@
 package gamefieldentities;
 
+import GameMapUtility.GMActor;
+
 /**
  * Tile	- This class holds basic information about a tile of the game field
  *

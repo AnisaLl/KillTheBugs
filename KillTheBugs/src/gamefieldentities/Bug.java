@@ -1,6 +1,7 @@
 package gamefieldentities;
 
 import GFI.BugView;
+import GameMapUtility.GMActor;
 
 public class Bug extends GMActor{
 	
