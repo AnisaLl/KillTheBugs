@@ -1,9 +1,12 @@
 package GameManagement;
 
 import GE.Account;
+import GFI.BugView;
 import GFI.CoinView;
 import GFI.FieldView;
 import GFI.GameView;
+import GFI.WeaponView;
+import GameMapUtility.GMActor;
 import gamefieldentities.Bug;
 import gamefieldentities.Bullet;
 import gamefieldentities.SuperWeapon;
@@ -139,7 +142,8 @@ public class GameManager implements ActionListener{
         test = new Test();
        //gameView = new GameView(bugBag, bulletBag);
         addPanels();
-        addListeners();   
+        addListeners();
+        genBugs();
         return true;
     }
     
@@ -196,6 +200,12 @@ public class GameManager implements ActionListener{
     {
         Timer timer = new Timer();
         //timer.schedule(new GenerateCoins(), 0, 5000);
+    }
+    
+    public void genBugs()
+    {
+        Timer timer = new Timer();
+        timer.schedule(new GenerateBugs(), 0, 2000);
     }
  
 
@@ -322,6 +332,11 @@ public class GameManager implements ActionListener{
         creditsView.getBackButton().addActionListener(this);
         settingsView.getBackButton().addActionListener(this);
         helpView.getBackButton().addActionListener(this);
+        
+        for (int i = 0; i < gameView.getButtonList().size(); i++)
+        {
+            gameView.getButtonList().get(i).addActionListener(this);
+        }
     }
         
     @Override
@@ -334,12 +349,7 @@ public class GameManager implements ActionListener{
         {
             cl.show(getCardPanel(), "2");
         }
-        
-//        for (int i = 0; i < gameView.getButtons().size(); i++)
-//        {
-//            gameView.getButtons().get(i).addActionListener(this);
-//        }
-        
+    
         if (source == mainMenuView.getHighScoreButton())
         {
             cl.show(getCardPanel(), "3");
@@ -356,10 +366,6 @@ public class GameManager implements ActionListener{
         {
             cl.show(getCardPanel(), "4");
         }
-//        for (int i = 0; i < settingsView.getButtons().get(i); i++)
-//        {
-//            mainMenuView.getButtons().get(i).addActionListener(this);
-//        }
         
         if (source == mainMenuView.getHelpButton())
         {
@@ -369,6 +375,23 @@ public class GameManager implements ActionListener{
         {
             cl.show(getCardPanel(), "6");
         }
+        
+        if (source == gameView.getNormalWeaponButton1())
+        {
+            WeaponView weaponView = new WeaponView("src/pictures/pistol.png");
+            gameView.getFieldView().setTileViewListCoord(3, 4, weaponView);
+        }
+        if (source == gameView.getNormalWeaponButton2())
+        {
+            WeaponView weaponView = new WeaponView("src/pictures/rifle.png");
+            gameView.getFieldView().setTileViewListCoord(4, 7, weaponView);
+        }
+        if (source == gameView.getNormalWeaponButton3())
+        {
+            WeaponView weaponView = new WeaponView("src/pictures/machineGun.png");
+            gameView.getFieldView().setTileViewListCoord(2, 6, weaponView);
+        }
+        
     }
     
 //    class GenerateCoins extends TimerTask
@@ -386,6 +409,16 @@ public class GameManager implements ActionListener{
 //            gameView.getFieldView().addObject(new BitsNPiecesView());
 //        }
 //    }
+    
+    class GenerateBugs extends TimerTask
+    {
+        public void run()
+        {
+            gameView.getFieldView().addBug(new BugView("src/pictures/flea.png"));
+        }
+    }
+    
+    
 
     /**
      * @return the cardPanel

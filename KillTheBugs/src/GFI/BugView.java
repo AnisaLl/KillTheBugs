@@ -11,6 +11,9 @@ package GFI;
  */
 
 import GameMapUtility.GMActor;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -23,52 +26,49 @@ import javax.swing.JPanel;
 public class BugView extends GMActor{
 	//private BufferedImage spiderImg,wormImg,cockroachImg,fleaImg;
         private BufferedImage img;
+        private int lastX = 0;
     
 	public BugView(String path) {
-		try {
-//			this.spiderImg = ImageIO.read(new File("pictures\\spider.png"));
-//			this.wormImg = ImageIO.read(new File("pictures\\worm.png"));
-//			this.cockroachImg = ImageIO.read(new File("pictures\\cockroach.png"));
-//			this.fleaImg = ImageIO.read(new File("pictures\\flea.png"));
-                        this.img = ImageIO.read(new File(path));
-                        add(new JLabel(new ImageIcon(img)));
-                        
-		} catch (IOException e) {
-			System.out.println(this.toString() + " exception : "+ e);
-		}
-	}
+            try {
+                    this.img = ImageIO.read(new File(path));
+                    add(new JLabel(new ImageIcon(img)));
 
-//	public BufferedImage getSpiderImg() {
-//		return spiderImg;
-//	}
-//
-//	public void setSpiderImg(BufferedImage spiderImg) {
-//		this.spiderImg = spiderImg;
-//	}
-//
-//	public BufferedImage getWormImg() {
-//		return wormImg;
-//	}
-//
-//	public void setWormImg(BufferedImage wormImg) {
-//		this.wormImg = wormImg;
-//	}
-//
-//	public BufferedImage getCockroachImg() {
-//		return cockroachImg;
-//	}
-//
-//	public void setCockroachImg(BufferedImage cockroachImg) {
-//		this.cockroachImg = cockroachImg;
-//	}
-//
-//	public BufferedImage getFleaImg() {
-//		return fleaImg;
-//	}
-//
-//	public void setFleaImg(BufferedImage fleaImg) {
-//		this.fleaImg = fleaImg;
-//	}
-//	
+            } catch (IOException e) {
+                    System.out.println(this.toString() + " exception : "+ e);
+            }
+                
+        Thread animationThread = new Thread(new Runnable() {
+            public void run() {
+                while (true) {
+                    repaint();
+                    try {Thread.sleep(10);} catch (Exception ex) {}
+                }
+            }
+        });
+
+        animationThread.start();
+	}
+        
+        public void paintComponent(Graphics g) {
+            //Graphics2D gg = (Graphics2D) g;
+
+            int w = getWidth();
+            int h = getHeight();
+
+            int bugW = 100;
+            int bugH = 10;
+            int trainSpeed = 1;
+
+            int x = lastX + trainSpeed;
+
+            if (x > w + bugW) {
+                x = -bugW;
+            }
+
+            g.drawImage(img, x, x, this);
+            
+            lastX = x;
+        }
 
 }
+

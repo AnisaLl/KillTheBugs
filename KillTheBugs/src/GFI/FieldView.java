@@ -4,18 +4,22 @@
  * and open the template in the editor.
  */
 package GFI;
+import GameMapUtility.GMActor;
 import GameMapUtility.GMWorld;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import gamefieldentities.*;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import javax.swing.JButton;
 
 /**
  *
  * @author USER
  */
 
-public class FieldView extends GMWorld{
+public class FieldView extends JPanel{
 	private BugView bugView;
 	private CoinView coinView;
 	private WeaponView weaponView;
@@ -23,41 +27,82 @@ public class FieldView extends GMWorld{
 	private LaserGunView laserGunView;
 	private BulletView bulletView;
         
+        //private ArrayList<TileView> tileViewList;
+        private GMActor[][] tileViewList;
+        
+        private int width, height;
+        
         public FieldView(int width, int height)
         {
-            super(width, height);
+            this.setLayout(new GridLayout(width, height, 0, 0));
+            tileViewList = new GMActor[width][height];
+            this.width = width;
+            this.height = height;
+            
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    tileViewList[i][j] = new TileView();
+                }
+            }
+;
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    this.add(tileViewList[i][j]);
+                }
+            }
+
         }
-	
-//	private ArrayList<Bug> bugs;
-//	private ArrayList<Bullet> bullets;
-//	private ArrayList<Coin> coins;
-//	private ArrayList<Weapon> weapons;
-//	private ArrayList<SuperWeapon> superWeapons;
-//	private ArrayList<Tile> tiles;
-//	public FieldView(ArrayList<Bug> bugs, ArrayList<Bullet> bullets, ArrayList<Coin> coins, ArrayList<Weapon> weapons,
-//			ArrayList<SuperWeapon> superWeapons, ArrayList<Tile> tiles) {
-//		super();
-//		this.bugs = bugs;
-//		this.bullets = bullets;
-//		this.coins = coins;
-//		this.weapons = weapons;
-//		this.superWeapons = superWeapons;
-//		this.tiles = tiles;
-//		bugView = new BugView();
-//		coinView = new CoinView();
-//		weaponView = new WeaponView();
-//		grenadeView = new GrenadeView();
-//		laserGunView = new LaserGunView();
-//		bulletView = new BulletView();
-//	}
+
+    /**
+     * @return the tileViewList
+     */
+    public GMActor[][] getTileViewList() {
+        return tileViewList;
+    }
+
+    /**
+     * @param tileViewList the tileViewList to set
+     */
+    public void setTileViewList(GMActor[][] tileViewList) {
+        this.tileViewList = tileViewList;
+    }
+    
+    public void setTileViewListCoord(int x, int y, GMActor tileView)
+    {
+        removeAll();
         
-//	@Override
-//	public void paint(Graphics g) {
-//		super.paint(g);
-//		for (Bug bug : bugs) {
-//			//g.drawImage(img, x, y, observer);
-//		}
-//	}
+        tileViewList[x][y] = tileView;
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                this.add(tileViewList[i][j]);
+            }
+        }
+        repaint();
+        revalidate();
+    }
+
+    public void addBug(GMActor bugView) {
+        removeAll();
+        tileViewList[1][14] = bugView;
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                this.add(tileViewList[i][j]);
+            }
+        }
+        repaint();
+        revalidate();
+    }
+
+    
+    
 	
 	
 	
