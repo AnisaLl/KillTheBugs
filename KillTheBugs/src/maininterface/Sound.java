@@ -5,10 +5,30 @@
  */
 package maininterface;
 
-/**
- *
- * @author Anisa
- */
-public class Sound {
-    
+import sun.audio.*;
+import java.io.*;
+
+public class Sound
+{
+		AudioPlayer mgp = AudioPlayer.player;
+		AudioStream bgm;
+		AudioData md;
+		ContinuousAudioDataStream loop;
+		String filename;
+
+		Sound(String filename) throws FileNotFoundException, IOException
+		{
+				this.filename = filename;
+				bgm = new AudioStream(new FileInputStream(filename));
+				md =bgm.getData();
+				loop = new ContinuousAudioDataStream(md);	
+				mgp.start(loop);
+				
+		}
+		
+	
+		public void stopmusic()
+		{
+			mgp.stop();
+		}
 }
