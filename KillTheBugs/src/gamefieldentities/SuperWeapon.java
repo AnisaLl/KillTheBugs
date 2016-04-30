@@ -1,55 +1,46 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gamefieldentities;
 
-import java.util.Observable;
-import java.util.Observer;
 
-/**
- *
- * @author Ertunc EFE
- * ID: 21100426
- * Date: 21100426
- */
-public class SuperWeapon extends Observable{
+import GameMapUtility.GMActor;
+
+public class SuperWeapon extends GMActor{
     
-    private int x,y;
     private int price;
-    private boolean status;
+    private int type;
+    private int remainingTime;
     
-    public SuperWeapon(int x, int y, int price, boolean status){
-        this.x = x;
-        this.y = y;
-        this.price = price;
-        this.status = status;
-    }
-
-    @Override
-    public synchronized void addObserver(Observer o) {
-        super.addObserver(o); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void notifyObservers() {
-        super.notifyObservers(); //To change body of generated methods, choose Tools | Templates.
+    public SuperWeapon(int x, int y, int type ,int row){
+        super(x,y,row);
+        this.price = 500;
+        this.type = type;
+        this.remainingTime = 25;
     }
 
     public int getPrice() {
         return price;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
-
     public void setPrice(int price) {
         this.price = price;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
+	}
+
+	public int getRemainingTime() {
+		return remainingTime;
+	}
+
+	public void setRemainingTime(int remainingTime) {
+		this.remainingTime = remainingTime;
+	}
+	
+    
+
 }

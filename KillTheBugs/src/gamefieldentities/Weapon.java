@@ -1,5 +1,4 @@
 package gamefieldentities;
-//import GFI.WeaponView;
 
 import GameMapUtility.GMActor;
 
@@ -7,24 +6,23 @@ import GameMapUtility.GMActor;
 public class Weapon extends GMActor{
 	private int price;
 	private int frequency;
-	private String name;
-	private boolean status;
+	private int type;
+	private int remainingTime = 0;
 	
-	public Weapon(int x, int y)
+	public Weapon(int x, int y,  int type,int row)
 	{
-            super(x, y);
-            price = 0;
-            frequency = 0;
-            name ="";
-            status = true;
-	}
-	public Weapon(int x, int y, int price, int frequency, String name, boolean status)
-	{
-            super(x, y);
-		this.price = price;
-		this.frequency = frequency;
-		this.name = name;
-		this.status = status;
+        super(x, y,row);
+        this.type = type;
+        if(type == 0){
+        	price = 10;
+        	frequency = 1;
+        }else if(type == 1){
+        	price = 35;
+        	frequency = 2;
+        }else if(type == 2){
+        	price = 50;
+        	frequency = 3;
+        }
 	}
 	
 	public int getPrice()
@@ -46,25 +44,23 @@ public class Weapon extends GMActor{
 	{
 		this.frequency = frequency;
 	}
-	
-	public String getName()
-	{
-		return name;
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
+	}
+
+	public int getRemainingTime() {
+		return remainingTime;
+	}
+
+	public void setRemainingTime(int remainingTime) {
+		this.remainingTime = remainingTime;
 	}
 	
-	public void setName(String name)
-	{
-		this.name = name;
-	}
 	
-	public boolean getStatus()
-	{
-		return status;
-	}
-	
-	public void setStatus(boolean status)
-	{
-		this.status = status;
-	}
 	
 }

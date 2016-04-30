@@ -1,28 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gamefieldentities;
 
 import GameMapUtility.GMActor;
 
-/**
- *
- * @author Cüneyt EREM
- */
-
 public class Bullet extends GMActor{
-	private final int SPEED;
-	private final int DAMAGE;
+	private final int SPEED = 5;
+	private final int DAMAGE = 20;
 
-	public Bullet(int x, int y) {
-            super(x, y);
-            SPEED = 5;
-            DAMAGE = 10;
+	public Bullet(int x, int y,int row) {
+            super(x, y,row);
 	}
 	
 	public int getSpeed() {
 		return SPEED;
 	}
+
+	public int getDAMAGE() {
+		return DAMAGE;
+	}
+	
 }

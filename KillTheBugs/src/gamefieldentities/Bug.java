@@ -1,6 +1,5 @@
 package gamefieldentities;
 
-import GFI.BugView;
 import GameMapUtility.GMActor;
 
 public class Bug extends GMActor{
@@ -8,26 +7,30 @@ public class Bug extends GMActor{
 	private int health;
 	private int speed;
 	private int scoreValue;
-	private String name;
-        private BugView bugView;
+	private int type;
 	
-	public Bug(int x, int y ,String name, int health, int speed, int scoreValue)
+	public Bug(int x, int y ,int type,int row)
 	{
-                super(x,y);
-		this.name = name;
-		this.health = health;
-		this.speed = speed;
+        super(x,y,row);
+		this.setType(type);
+        if(type == 0){//0 for spider
+        	this.speed = 10;
+        	this.health = 120;
+        }else if(type == 1){//1 for Cockroach
+        	this.speed = 50;
+        	this.health = 80;
+        }else if(type == 2){//2 for Worm
+        	this.speed = 40;
+        	this.health = 50;
+        }else if(type == 3){//3 for ant
+        	this.speed = 20;
+        	this.health = 30;
+        }else{//other for Flea
+        	this.speed = 10;
+        	this.health = 10;
+        }
 	}
 	
-	public String getName()
-	{
-		return name;
-	}
-	
-	public void setName(String name)
-	{
-		this.name = name;
-	}
 	
 	public int getHealth()
 	{
@@ -59,18 +62,14 @@ public class Bug extends GMActor{
 		this.scoreValue = scoreValue;
 	}
 
-    /**
-     * @return the bugView
-     */
-    public BugView getBugView() {
-        return bugView;
-    }
+	public int getType() {
+		return type;
+	}
 
-    /**
-     * @param bugView the bugView to set
-     */
-    public void setBugView(BugView bugView) {
-        this.bugView = bugView;
-    }
+	public void setType(int type) {
+		this.type = type;
+	}
+
+	
 	
 }

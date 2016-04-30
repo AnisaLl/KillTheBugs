@@ -7,10 +7,8 @@ package game;
 
 import GameManagement.GameFrame;
 
-/**
- *
- * @author Anisa
- */
+//TEST CLASS
+
 public class OurGame {
     
     	public static void main(String[] args) {

@@ -1,20 +1,11 @@
-
 package GFI;
 
-/**
- *
- * @author USER
- */
-
-
-import GameMapUtility.GMActor;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
-import javax.swing.JPanel;
 
-public class CoinView extends GMActor{
+public class CoinView {
 	private BufferedImage coin;
 	
 	public CoinView() {
@@ -25,12 +16,15 @@ public class CoinView extends GMActor{
 		}
 	}
 
-	public BufferedImage getCoin() {
+	public BufferedImage getGrenade() {
 		return coin;
 	}
 
-	public void setCoin(BufferedImage coin) {
+	public void setGrenade(BufferedImage coin) {
 		this.coin = coin;
 	}
+
+	
+	
 
 }

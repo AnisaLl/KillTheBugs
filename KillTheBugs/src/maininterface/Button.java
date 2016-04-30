@@ -11,7 +11,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import javax.swing.BorderFactory;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 //?
@@ -21,7 +20,6 @@ public class Button extends JButton{
 	String action;
 	Color c;
 	ActionListener listener;
-	private ImageIcon buttonimage;
 	
 	public Button (Color c,String Label)
 	{
@@ -34,17 +32,10 @@ public class Button extends JButton{
 	public Button (String Label, String path)
 	{
 		this.Label = Label;
-		//------------------- need to define the path-----/////
-                
-//		ImageIcon button1 = new ImageIcon("pictures/newgamebutton.png");
-//		Image image1 = button1.getImage();
-//		Image newimg1 = image1.getScaledInstance(160, 40,Image.SCALE_SMOOTH);
-//		button1 = new ImageIcon(newimg1);
 
                  try {
                      Image img = ImageIO.read(new FileInputStream(path));
                      img = img.getScaledInstance(60, 30, java.awt.Image.SCALE_SMOOTH);
-                    //Image img = ImageIO.read(this.getClass().getResource("src/pictures/newgamebutton.png"));
                     this.setIcon(new ImageIcon(img));
                   } catch (IOException ex) {
                       ex.printStackTrace();
@@ -54,13 +45,8 @@ public class Button extends JButton{
 		setText(Label);
 		setHorizontalTextPosition(JButton.CENTER);
                 setPreferredSize(new Dimension (60, 30));
-		//setIcon((Icon) button1);
-		
-		//setForeground(new Color(255, 255, 255));
 		setFont(new Font("Circula", Font.PLAIN, 15));
 		setAlignmentX(Component.CENTER_ALIGNMENT);
-		
-		
 	}
         
         public Button (String Label)
@@ -70,9 +56,6 @@ public class Button extends JButton{
 		setText(Label);
 		setHorizontalTextPosition(JButton.CENTER);
                 setPreferredSize(new Dimension (60, 30));
-		//setIcon((Icon) button1);
-		
-		//setForeground(new Color(255, 255, 255));
 		setFont(new Font("Circula", Font.PLAIN, 15));
 		setAlignmentX(Component.CENTER_ALIGNMENT);
 		

@@ -1,43 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package GameMapUtility;
 
-import javax.swing.JPanel;
 
-/**
- *
- * @author Ertunc EFE
- * ID: 21100426
- * Date: 27.04.2016
- */
-public class GMActor extends JPanel{
+public class GMActor{
     
-    private int x, y;
+    private int x, y,row;
     
-    public GMActor(int x, int y)
+    public GMActor(int x, int y,int row)
     {
-        this.x = x;
-        this.y = y;
+        this.setX(x);
+        this.setY(y);
+        this.row = row;
     }
     
-    public GMActor()
-    {
-        
-    }
+	public int getY() {
+		return y;
+	}
 
-    void addToWorld(int x, int y, GMWorld aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+	public void setY(int y) {
+		this.y = y;
+	}
 
-    void removeActor(GMWorld aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+	public int getX() {
+		return x;
+	}
 
-    public String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getRow() {
+		return row;
+	}
+
+	public void setRow(int row) {
+		this.row = row;
+	}
+	
     
 }
